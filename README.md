@@ -167,16 +167,13 @@ https://github.com/user-attachments/assets/ee575607-9fc2-46d7-8009-5a4b43264a30
 
 ## Daftar Pustaka
 
-1. Stevens, W. Richard. "UNIX Net
-
-work Programming Volume 1: The Sockets Networking API." Addison-Wesley Professional, 2003.
+1. Stevens, W. Richard. "UNIX Network Programming Volume 1: The Sockets Networking API." Addison-Wesley Professional, 2003.
 
 2. RFC 1831 - RPC: Remote Procedure Call Protocol Specification Version 
-
-3. Birrell, A. D., & Nelson, B. J. (1984). Implementing Remote Procedure Calls. ACM Transactions on Computer Systems, 2(1)
    
-4. Király, S., & Szekely, S. (2017). Analysing RPC and testing the performance of solutions. Eszterhazy Karoly University & Imperial College.
-5. Andrew D. Birrell and Bruce Jay Nelson (1984). 
+3. Király, S., & Szekely, S. (2017). Analysing RPC and testing the performance of solutions. Eszterhazy Karoly University & Imperial College.
+   
+4. Andrew D. Birrell and Bruce Jay Nelson (1984). 
 Implementing Remote Procedure Calls. ACM 
 Transactions on Computer Systems, Vol. 2, No. 1, 
 February 1984,
