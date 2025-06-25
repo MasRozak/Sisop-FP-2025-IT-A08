@@ -23,7 +23,7 @@ Maritza Adelia Sucipto | 5027241111
 
 ## Deskripsi Soal
 
-> Membuat sebuah program encyrptor berbasis RPC yang terdiri dari client dan server. Saat client mengirimkan sebuah teks ke server, maka server akan merespons dengan teks dari client yang telah dienkripsi dengan ROT13.
+> Buatlah sebuah program Encryptor berbasis Remote Procedure Call (RPC) yang terdiri dari dua komponen utama, yaitu client dan server. Dalam program ini, client akan mengirimkan sebuah teks ke server melalui mekanisme RPC. Server kemudian menerima teks tersebut dan melakukan proses enkripsi menggunakan algoritma ROT13 dan setelah proses enkripsi selesai, server akan mengembalikan hasil enkripsi tersebut kepada client sebagai respons.
 
 ### Catatan
 
