@@ -169,10 +169,11 @@ https://github.com/user-attachments/assets/ee575607-9fc2-46d7-8009-5a4b43264a30
 
 1. Wahyu B, S. (2009). Eksploitasi RPC pada Sistem Operasi Windows. Dinamika Informatika, 1(1). ISSN: 2085-3343.
    
-2. Király, S., & Szekely, S. (2017). Analysing RPC and testing the performance of solutions. Eszterhazy Karoly University & Imperial College.
+3. Király, S., & Szekely, S. (2017). Analysing RPC and testing the performance of solutions. Eszterhazy Karoly University & Imperial College.
    https://www.informatica.si/index.php/informatica/article/view/1510?utm_source=chatgpt.com
    
 4. Andrew D. Birrell and Bruce Jay Nelson (1984). 
 Implementing Remote Procedure Calls. ACM 
 Transactions on Computer Systems, Vol. 2, No. 1, 
 February 1984,
+https://dl.acm.org/doi/10.1145/2080.357392
