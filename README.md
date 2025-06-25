@@ -41,9 +41,9 @@ Sisop-FP-2025-IT-A08/
 └── README.md
 ```
 
-## Pengerjaan
+# Pengerjaan
 
-### Pengertian Remote Procedure Calls (RPC)
+## Pengertian Remote Procedure Calls (RPC)
 
 Remote Procedure Call (RPC) adalah sebuah mekanisme komunikasi dalam sistem terdistribusi yang memungkinkan sebuah program untuk memanggil prosedur atau fungsi yang berada di komputer lain seolah-olah dijalankan secara lokal. Konsep ini diperkenalkan secara mendalam oleh Birrell dan Nelson dalam makalah klasik mereka pada tahun 1984 (Implementing Remote Procedure Calls) (Birrell & Nelson, 1984). Dalam sistem RPC, prosedur pemanggil (caller) dan yang dipanggil (callee) berada pada ruang alamat yang berbeda dan dapat dijalankan pada sistem operasi yang berbeda pula, sehingga diperlukan teknik khusus untuk mengatasi kompleksitas komunikasi lintas mesin ini. Salah satu tantangan utamanya adalah bagaimana mengirimkan parameter dan menerima hasil antar sistem yang bisa saja memiliki arsitektur perangkat lunak atau struktur data yang berbeda. Meski demikian, pendekatan RPC terbukti efektif dan telah menjadi fondasi dari banyak sistem terdistribusi modern, karena menyederhanakan komunikasi jaringan melalui abstraksi pemanggilan fungsi jarak jauh.
 
@@ -64,6 +64,7 @@ Tujuan utama dari proyek RPC yang dikembangkan oleh Birrell dan Nelson adalah un
 
 4. Efisiensi tinggi dalam komunikasi RPC
    - Menghindari latensi yang tinggi agar aplikasi tetap efisien dan tidak menghindari komunikasi.
+  
 
 ### 1. Implementasi Server RPC
 
