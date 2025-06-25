@@ -27,41 +27,121 @@ Maritza Adelia Sucipto | 5027241111
 
 ### Catatan
 
-> Insert catatan dari pengerjaan kalian... (contoh dibawah) // hapus line ini
+> Program ini mengimplementasikan sistem Remote Procedure Call (RPC) sederhana menggunakan TCP socket untuk komunikasi antara client dan server. Server melakukan enkripsi teks menggunakan algoritma ROT13 dan mengembalikan hasil enkripsi kepada client.
 
 Struktur repository:
 ```
-.
-..
+Sisop-FP-2025-IT-A08/
+├── Code/
+│   ├── client.c          # Program client RPC
+│   └── server.c          # Program server RPC
+├── Papers/
+│   ├── 259-Article Text-881-1-10-20121110.pdf
+│   └── RPC.pdf
+└── README.md
 ```
 
 ## Pengerjaan
 
-> Insert poin soal...
+### 1. Implementasi Server RPC
 
 **Teori**
 
-...
+Server RPC berfungsi sebagai penyedia layanan enkripsi ROT13. Server akan:
+- Mendengarkan koneksi pada port 8080
+- Menerima teks dari client
+- Melakukan enkripsi ROT13
+- Mengirimkan hasil enkripsi kembali ke client
+
+ROT13 adalah algoritma enkripsi sederhana yang menggeser setiap huruf alfabetik sebanyak 13 posisi. Untuk huruf a-z: a→n, b→o, ..., n→a, o→b, dst. Begitu juga untuk huruf A-Z.
+
 
 **Solusi**
 
-...
+Server diimplementasikan dengan fitur-fitur berikut:
+```c
+// Fungsi enkripsi ROT13
+void rot13(char *str) {
+    if (str == NULL) return;
+    for (int i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+        if (c >= 'a' && c <= 'z') {
+            str[i] = (((c - 'a') + 13) % 26) + 'a';
+        } else if (c >= 'A' && c <= 'Z') {
+            str[i] = (((c - 'A') + 13) % 26) + 'A';
+        }
+    }
+}
+```
 
-> Insert poin soal...
+Server menggunakan TCP socket untuk komunikasi yang reliable, menampilkan status koneksi client, dan dapat melayani multiple client secara berurutan.
+
+
+### 2. Implementasi Client RPC
 
 **Teori**
 
-...
+Client RPC berfungsi sebagai pengguna layanan enkripsi. Client akan:
+- Terhubung ke server pada alamat IP dan port tertentu
+- Mengirimkan teks yang ingin dienkripsi
+- Menerima hasil enkripsi dari server
+- Menampilkan hasil kepada pengguna
 
 **Solusi**
 
-...
+Client diimplementasikan dengan interface interaktif yang memungkinkan pengguna:
+- Memasukkan teks secara berulang
+- Melihat hasil enkripsi real-time
+- Keluar dari program dengan perintah "exit"
+
+```c
+// Loop utama client untuk interaksi
+while(1) {
+    printf("Teks : ");
+    fgets(text_to_send, BUFFER_SIZE, stdin);
+    
+    // Kirim ke server dan terima balasan
+    send(sock, text_to_send, strlen(text_to_send), 0);
+    read(sock, buffer, BUFFER_SIZE - 1);
+    
+    printf("Server (ROT13) : %s\n\n", buffer);
+}
+```
+### 3. Cara Menjalankan Program
+
+**Kompilasi:**
+```bash
+cd Code
+gcc -o server server.c
+gcc -o client client.c
+```
+**Menjalankan:**
+1. Jalankan server terlebih dahulu:
+   ```bash
+   ./server
+   ```
+
+2. Di terminal lain, jalankan client:
+   ```bash
+   ./client
+   ```
+
+3. Masukkan teks yang ingin dienkripsi, program akan menampilkan hasil ROT13.
+
+**Contoh Penggunaan:**
+```
+Teks : Hello World
+Server (ROT13) : Uryyb Jbeyq
+
+Teks : Sistem Operasi
+Server (ROT13) : Fvfgrz Bcrenfv
+```
+
 
 **Video Menjalankan Program**
 ...
 
 ## Daftar Pustaka
 
-Sitasi 1
-Sitasi 2
-Sitasi 3
+1. Stevens, W. Richard. "UNIX Network Programming Volume 1: The Sockets Networking API." Addison-Wesley Professional, 2003.
+2. RFC 1831 - RPC: Remote Procedure Call Protocol Specification Version 
