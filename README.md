@@ -171,3 +171,5 @@ https://github.com/user-attachments/assets/ee575607-9fc2-46d7-8009-5a4b43264a30
 
 work Programming Volume 1: The Sockets Networking API." Addison-Wesley Professional, 2003.
 2. RFC 1831 - RPC: Remote Procedure Call Protocol Specification Version 
+
+3. Birrell, A. D., & Nelson, B. J. (1984). Implementing Remote Procedure Calls. ACM Transactions on Computer Systems, 2(1)
