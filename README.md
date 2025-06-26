@@ -130,6 +130,65 @@ while(1) {
     printf("Server (ROT13) : %s\n\n", buffer);
 }
 ```
+
+## Hubungan Teori dan Implementasi
+
+### 1. Konsep Dasar RPC
+
+> Birrell & Nelson (1984, hlm. 40)  menjelaskan bahwa RPC adalah perpanjangan dari pemanggilan fungsi lokal menjadi remote.
+
+#### Implementasi
+
+// client.c
+send(sock, text_to_send, strlen(text_to_send), 0);
+
+// server.c
+read(new_socket, buffer, BUFFER_SIZE - 1);    
+rot13(buffer);                          
+send(new_socket, buffer, strlen(buffer), 0);    
+
+### 2. Model Client-Server
+
+> Wahyu (2009, hlm. 2) menyebut RPC berbasis model client-server.
+
+#### Implementasi
+
+// client.c
+connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
+
+// server.c
+accept(server_fd, (struct sockaddr *)&address, &addrlen);
+
+### 3. Call & Reply Message
+
+> Wahyu (2009, hlm. 6) menyebut komunikasi RPC terdiri dari call message (permintaan) dan reply message (balasan).
+
+#### Implementasi
+
+// client.c
+send(sock, text_to_send, strlen(text_to_send), 0);
+read(sock, buffer, BUFFER_SIZE - 1);
+
+// server.c
+read(new_socket, buffer, BUFFER_SIZE - 1);
+send(new_socket, buffer, strlen(buffer), 0);
+
+### 4. Fungsi Remote = ROT13
+
+> Birrell & Nelson (1984, hlm. 40) menyebut fungsi jarak jauh dieksekusi seolah lokal — dalam hal ini ```rot13()```
+
+### 5. Alur Eksekusi RPC
+
+> Wahyu (2009, hlm. 6) menyusun alur RPC: client kirim → server proses → kirim hasil → client terima.
+
+#### Implementasi
+
+// client.c
+fgets(text_to_send, BUFFER_SIZE, stdin);
+send(sock, text_to_send, strlen(text_to_send), 0);
+read(sock, buffer, BUFFER_SIZE - 1);
+
+
 ### 3. Cara Menjalankan Program
 
 **Kompilasi:**
