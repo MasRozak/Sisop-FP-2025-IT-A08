@@ -139,13 +139,17 @@ while(1) {
 
 #### Implementasi
 
-// client.c
+client.c
+```c
 send(sock, text_to_send, strlen(text_to_send), 0);
+```
 
-// server.c
+server.c
+```c
 read(new_socket, buffer, BUFFER_SIZE - 1);    
 rot13(buffer);                          
 send(new_socket, buffer, strlen(buffer), 0);    
+```
 
 ### 2. Model Client-Server
 
@@ -153,26 +157,31 @@ send(new_socket, buffer, strlen(buffer), 0);
 
 #### Implementasi
 
-// client.c
+client.c
+```c
 connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
+```
 
-// server.c
+server.c
+```
 accept(server_fd, (struct sockaddr *)&address, &addrlen);
-
+```
 ### 3. Call & Reply Message
 
 > Wahyu (2009, hlm. 6) menyebut komunikasi RPC terdiri dari call message (permintaan) dan reply message (balasan).
 
 #### Implementasi
 
-// client.c
+client.c
+```c
 send(sock, text_to_send, strlen(text_to_send), 0);
 read(sock, buffer, BUFFER_SIZE - 1);
-
-// server.c
+```
+server.c
+```c
 read(new_socket, buffer, BUFFER_SIZE - 1);
 send(new_socket, buffer, strlen(buffer), 0);
-
+```
 ### 4. Fungsi Remote = ROT13
 
 > Birrell & Nelson (1984, hlm. 40) menyebut fungsi jarak jauh dieksekusi seolah lokal — dalam hal ini ```rot13()```
@@ -183,11 +192,12 @@ send(new_socket, buffer, strlen(buffer), 0);
 
 #### Implementasi
 
-// client.c
+client.c
+```c
 fgets(text_to_send, BUFFER_SIZE, stdin);
 send(sock, text_to_send, strlen(text_to_send), 0);
 read(sock, buffer, BUFFER_SIZE - 1);
-
+```
 
 ### 3. Cara Menjalankan Program
 
